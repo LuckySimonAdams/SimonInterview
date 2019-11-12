@@ -1,11 +1,12 @@
 console.log('================= 原始Object =========================');
 
-console.log(Object.constructor);
+console.log(Object);
+// console.log(Object.constructor);
 console.log(Object.prototype);
 console.log(Object.__proto__);
 console.log(Object.constructor.prototype);
 console.log(Object.prototype.__proto__);
-// console.log(Object.prototype.constructor);
+console.log(Object.prototype.constructor === Object);
 // console.log(Object.prototype.constructor.prototype);
 // console.log(Object.prototype.constructor.prototype === Object.prototype);
 
@@ -32,5 +33,6 @@ console.log(fn.__proto__ === Object.__proto__);
 console.log(fn.constructor.__proto__);
 console.log(fn.constructor.__proto__ === fn.__proto__);
 console.log(fn.prototype.__proto__);
+console.log(fn.prototype.__proto__ === Object.prototype);
 
 console.log('==========================================');
