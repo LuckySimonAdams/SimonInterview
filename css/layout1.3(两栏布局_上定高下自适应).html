@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>layout1.3</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .red {
+            background: red;
+        }
+        .blue {
+            background: blue;
+        }
+
+        .layout-position>div {
+            width: 100%;
+        }
+        .layout-position .top {
+            position: absolute;
+            top: 0;
+            height: 50px;
+        }
+        .layout-position .bottom {
+            position: absolute;
+            top: 50px;
+            bottom: 0;
+        }
+
+        .layout-table {
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+        .layout-table>div {
+            display: table-row;
+        }
+        .layout-table .top {
+            height: 50px;
+        }
+
+        .layout-flex {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .layout-flex .top {
+            height: 50px;
+        }
+        .layout-flex .bottom {
+            flex: 1;
+        }
+
+        .layout-grid {
+            display: grid;
+            grid-template-rows: 50px auto;
+            grid-template-columns: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!--<section class="layout-position">-->
+        <!--<div class="top red">top</div>-->
+        <!--<div class="bottom blue">-->
+            <!--<h1>绝对定位解决方案</h1>-->
+        <!--</div>-->
+    <!--</section>-->
+
+    <!--<section class="layout-table">-->
+        <!--<div class="top red">top</div>-->
+        <!--<div class="bottom blue">-->
+            <!--<h1>table布局解决方案</h1>-->
+        <!--</div>-->
+    <!--</section>-->
+
+    <!--<section class="layout-flex">-->
+        <!--<div class="top red">top</div>-->
+        <!--<div class="bottom blue">-->
+            <!--<h1>flex布局解决方案</h1>-->
+        <!--</div>-->
+    <!--</section>-->
+
+    <section class="layout-grid">
+        <div class="top red">top</div>
+        <div class="bottom blue">
+            <h1>grid布局解决方案</h1>
+        </div>
+    </section>
+</body>
+</html>

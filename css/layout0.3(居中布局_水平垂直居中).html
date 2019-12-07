@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>layout0.3</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .parent {
+            height: 100px;
+            background: red;
+        }
+        .child {
+            border: 1px solid yellow;
+            color: #ffffff;
+        }
+        .layout {
+            margin-bottom: 50px;
+        }
+
+        .layout-line-height .parent {
+            text-align: center;
+        }
+        .layout-line-height .child {
+            line-height: 100px;
+        }
+
+        .layout-position .parent {
+            position: relative;
+        }
+        .layout-position .child {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .layout-table .parent {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+            padding: 20px 60px;
+        }
+
+        .layout-flex .parent {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .layout-flex2 .parent {
+            display: flex;
+        }
+        .layout-flex2 .child {
+            margin: auto;
+        }
+
+        .layout-grid .parent {
+            display: grid;
+        }
+        .layout-grid .child {
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <section class="layout layout-line-height">
+        <div class="parent">
+            <div class="child">child text</div>
+        </div>
+    </section>
+
+    <section class="layout layout-position">
+        <div class="parent">
+            <div class="child">child text</div>
+        </div>
+    </section>
+
+    <section class="layout layout-table">
+        <div class="parent">
+            <div class="child">child text</div>
+        </div>
+    </section>
+
+    <section class="layout layout-flex">
+        <div class="parent">
+            <div class="child">child text</div>
+        </div>
+    </section>
+
+    <section class="layout layout-flex2">
+        <div class="parent">
+            <div class="child">child text</div>
+        </div>
+    </section>
+
+    <section class="layout layout-grid">
+        <div class="parent">
+            <div class="child">child text</div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout2.1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .red {
+            background: red;
+        }
+        .yellow {
+            background: yellow;
+        }
+        .blue {
+            background: blue;
+        }
+        .layout {
+            margin-bottom: 50px;
+        }
+
+        .layout-float>div {
+            height: 100px;
+        }
+        .layout-float .left {
+            float: left;
+            width: 200px;
+        }
+        .layout-float .right {
+            float: right;
+            width: 200px;
+        }
+        /*创建BFC*/
+        /*.layout-float .center {*/
+            /*overflow: hidden; !*或者是auto*!*/
+        /*}*/
+
+        .layout-position>div {
+            position: absolute;
+            height: 100px;
+        }
+        .layout-position .left {
+            left: 0;
+            width: 200px;
+        }
+        .layout-position .center {
+            left: 200px;
+            right: 200px;
+            /*overflow: hidden; !*创建BFC*!*/
+        }
+        .layout-position .right {
+            right: 0;
+            width: 200px;
+        }
+
+        .layout-table {
+            margin-top: 200px;
+            display: table;
+            width: 100%;
+            height: 100px;
+        }
+        .layout-table .left,
+        .layout-table .right {
+            display: table-cell;
+            width: 200px;
+        }
+
+        .layout-flex {
+            display: flex;
+        }
+        .layout-flex .left,
+        .layout-flex .right {
+            width: 200px;
+            height: 100px;
+        }
+        .layout-flex .center {
+            flex: 1;
+        }
+
+        .layout-grid {
+            display: grid;
+            grid-template-rows: 100px;
+            grid-template-columns: 200px auto 200px;
+        }
+        /*创建BFC*/
+        /*.layout-grid .center {*/
+            /*overflow: hidden; !*或者是auto*!*/
+        /*}*/
+    </style>
+</head>
+<body>
+    <section class="layout">
+        <article class="layout-float">
+            <div class="left red">left</div>
+            <div class="right blue">right</div>
+            <!--注意center要写在最后面-->
+            <div class="center yellow">
+                <h1>浮动布局解决方案</h1>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+            </div>
+        </article>
+    </section>
+
+    <section class="layout">
+        <article class="layout-position">
+            <div class="left red">left</div>
+            <div class="center yellow">
+                <h1>绝对定位解决方案</h1>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+            </div>
+            <div class="right blue">right</div>
+        </article>
+    </section>
+
+    <section class="layout">
+        <article class="layout-table">
+            <div class="left red">left</div>
+            <div class="center yellow">
+                <h1>table布局解决方案</h1>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+            </div>
+            <div class="right blue">right</div>
+        </article>
+    </section>
+
+    <section class="layout">
+        <article class="layout-flex">
+            <div class="left red">left</div>
+            <div class="center yellow">
+                <h1>flex布局解决方案</h1>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+            </div>
+            <div class="right blue">right</div>
+        </article>
+    </section>
+
+    <section class="layout">
+        <article class="layout-grid">
+            <div class="left red">left</div>
+            <div class="center yellow">
+                <h1>grid布局解决方案</h1>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+            </div>
+            <div class="right blue">right</div>
+        </article>
+    </section>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout1.2</title>
+    <style>
+        html, body, h1, p {
+            margin: 0;
+            padding: 0;
+        }
+        .red {
+            background: red;
+        }
+        .blue {
+            background: blue;
+        }
+        .layout {
+            margin-bottom: 50px;
+        }
+
+        .layout-float>div {
+            height: 100px;
+        }
+        .layout-float .left {
+            /*overflow: hidden; !*创建BFC*!*/
+        }
+        .layout-float .right {
+            float: right;
+            width: 200px;
+        }
+
+        .layout-position>div {
+            position: absolute;
+            height: 100px;
+        }
+        .layout-position .left {
+            left: 0;
+            right: 200px;
+            /*overflow: hidden; !*创建BFC*!*/
+        }
+        .layout-position .right {
+            right: 0;
+            width: 200px;
+        }
+
+        .layout-table {
+            margin-top: 200px;
+            display: table;
+            width: 100%;
+            height: 100px;
+        }
+        .layout-table .right{
+            display: table-cell;
+            width: 200px;
+        }
+
+        .layout-flex {
+            display: flex;
+        }
+        .layout-flex .left {
+            flex: 1;
+        }
+        .layout-flex .right {
+            width: 200px;
+            height: 100px;
+        }
+
+        .layout-grid {
+            display: grid;
+            grid-template-rows: 100px;
+            grid-template-columns: auto 200px;
+        }
+        .layout-grid .left {
+            /*overflow: hidden; !*创建BFC*!*/
+        }
+    </style>
+</head>
+<body>
+    <section class="layout">
+        <article class="layout-float">
+            <!--注意顺序-->
+            <div class="right blue">right</div>
+            <div class="left red">
+                <h1>浮动布局解决方案</h1>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+            </div>
+        </article>
+    </section>
+
+    <section class="layout">
+        <article class="layout-position">
+            <div class="left red">
+                <h1>绝对定位解决方案</h1>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+            </div>
+            <div class="right blue">right</div>
+        </article>
+    </section>
+
+    <section class="layout">
+        <article class="layout-table">
+            <div class="left red">
+                <h1>table布局解决方案</h1>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+            </div>
+            <div class="right blue">right</div>
+        </article>
+    </section>
+
+    <section class="layout">
+        <article class="layout-flex">
+            <div class="left red">
+                <h1>flex布局解决方案</h1>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+            </div>
+            <div class="right blue">right</div>
+        </article>
+    </section>
+
+    <section class="layout">
+        <article class="layout-grid">
+            <div class="left red">
+                <h1>grid布局解决方案</h1>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+                <p>this is center area</p>
+            </div>
+            <div class="right blue">right</div>
+        </article>
+    </section>
+</body>
+</html>
