@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            margin-bottom: 20px;
+        }
+
+        #ev {
+            padding: 10px;
+            background: red;
+        }
+
+        #ev-delegation {
+            padding: 10px;
+            background: blue;
+        }
+
+        #customEvent {
+            padding: 10px;
+            background: darkcyan;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div id="ev">事件捕获流程</div>
+
+    <div id="ev-delegation">
+        <p>item1</p>
+        <p>item2</p>
+        <p>item3</p>
+    </div>
+
+    <div id="customEvent">自定义事件</div>
+
+    <script>
+        /*事件捕获或冒泡的具体流程*/
+        // window.addEventListener('click', () => {
+        //     console.log('window capture');
+        // }, true);
+        // document.addEventListener('click', () => {
+        //     console.log('document capture');
+        // }, true);
+        // document.documentElement.addEventListener('click', () => {
+        //     console.log('html capture');
+        // }, true);
+        // document.body.addEventListener('click', () => {
+        //     console.log('body capture');
+        // }, true);
+        // document.getElementById('ev').addEventListener('click', () => {
+        //     console.log('element capture');
+        // }, true);
+
+        /*事件委托*/
+        document.getElementById('ev-delegation').addEventListener('click', e => {
+            console.log(e.target, e.currentTarget);
+        });
+
+        /*自定义事件*/
+        const data = {
+            name: 'simon',
+            age: 24
+        };
+        const customEvent = new CustomEvent('pick', {
+            detail: data
+        });
+        const dom = document.getElementById('customEvent');
+        dom.addEventListener('pick', e => {
+            console.log(e);
+            console.log(e.detail);
+        });
+        // dom.dispatchEvent(customEvent);
+        dom.onclick = function () {
+            dom.dispatchEvent(customEvent);
+        };
+    </script>
+</body>
+</html>
