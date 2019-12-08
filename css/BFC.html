@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BFC</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        .red {
+            background: red;
+        }
+        .yellow {
+            background: yellow;
+        }
+        .blue {
+            background: blue;
+        }
+        .left {
+            float: left;
+        }
+        .bfc {
+            margin-bottom: 50px;
+        }
+
+        .margin-overlap .parent {
+            overflow: hidden;
+        }
+        .margin-overlap .child {
+            height: 100px;
+            margin: 10px;
+            background: yellow;
+            overflow: hidden;
+        }
+
+        .clear-float .left {
+            width: 100px;
+            height: 100px;
+        }
+        .clear-float .parent {
+            border: 1px solid red;
+            overflow: hidden;
+        }
+        .clear-float .child {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!--BFC应用场景1：边距重叠问题-->
+    <section class="bfc margin-overlap">
+        <div class="parent red">
+            <article class="child yellow"></article>
+        </div>
+        <div class="parent red">
+            <article class="child yellow"></article>
+        </div>
+    </section>
+
+    <section class="bfc clear-float">
+        <!--BFC特性：BFC区域不会与浮动元素发生重叠-->
+        <div class="left blue"></div>
+        <!--BFC应用场景2：清除浮动-->
+        <!--BFC应用场景3：阻止元素被浮动元素覆盖-->
+        <div class="parent">
+            <div class="child left yellow"></div>
+        </div>
+    </section>
+</body>
+</html>
