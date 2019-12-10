@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A</title>
+</head>
+<body>
+<div id="open">open</div>
+
+<script>
+    document.getElementById('open').onclick = () => {
+        const targetWindow = window.open('http://localhost:8081/B.html');
+        setTimeout(() => {
+            targetWindow.postMessage('Hello B.html', 'http://localhost:8081/B.html')
+        }, 50);
+    };
+</script>
+</body>
+</html>
